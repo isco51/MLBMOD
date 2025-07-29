@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASEBALL 9 - Unlimited Edition</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles (Dark Mode by default) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark background */
+            color: #E5E7EB; /* Light gray text */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background-color: #F9FAFB; /* Very light gray background */
+            color: #1F2937; /* Darker text */
+        }
+        body.light-mode .text-white {
+            color: #111827 !important;
+        }
+        body.light-mode .text-gray-300 {
+            color: #4B5563 !important;
+        }
+        body.light-mode .text-gray-400 {
+            color: #6B7280 !important;
+        }
+        body.light-mode .text-gray-500 {
+            color: #6B7280 !important;
+        }
+        body.light-mode .testimonial-card {
+            background-color: #FFFFFF;
+            border-color: #E5E7EB;
+        }
+        body.light-mode .testimonial-card .text-white {
+            color: #1F2937 !important;
+        }
+
+        /* Animation for scroller */
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .scroller {
+            animation: scroll 40s linear infinite;
+        }
+
+        /* Download button styles */
+        .download-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        .download-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Light/Dark Mode Toggle Button -->
+    <button id="theme-toggle" class="fixed top-4 right-4 z-50 bg-gray-700 text-white p-2 rounded-full focus:outline-none">
+        <!-- Moon Icon -->
+        <svg id="theme-toggle-dark-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <!-- Sun Icon -->
+        <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+    </button>
+
+    <!-- Main Content Container -->
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8 pt-16">
+
+        <!-- Logo -->
+        <img src="https://9mod.com/wp-content/uploads/2024/06/baseball-9.webp" 
+             alt="BASEBALL 9 Logo" 
+             class="w-40 md:w-56"
+             onerror="this.onerror=null; this.src='https://placehold.co/256x256/111827/ffffff?text=LOGO';">
+        
+        <!-- Game Name -->
+        <h1 class="text-4xl md:text-5xl font-bold tracking-wider text-white mt-4 mb-6">BASEBALL 9</h1>
+
+        <!-- Enticing Game Information -->
+        <div class="text-center max-w-2xl mb-8">
+            <h2 class="text-2xl md:text-3xl font-extrabold mb-4 text-yellow-400">Get the Ultimate Edition!</h2>
+            <p class="text-lg text-gray-300 leading-relaxed">
+                Dominate the league with unlimited resources. Recruit any player you want, max out their stats, and build an unstoppable dynasty from day one.
+            </p>
+            <ul class="text-left inline-block list-inside list-none mt-4 space-y-2 text-lg">
+                <li class="flex items-center">
+                    <svg class="w-6 h-6 text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6-4a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span><strong>Unlimited Money & Gems:</strong> Buy anything you want.</span>
+                </li>
+                <li class="flex items-center">
+                    <svg class="w-6 h-6 text-green-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6-4a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span><strong>All Players Unlocked:</strong> Create your dream team instantly.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Download Button & Info -->
+        <div class="w-full max-w-sm mb-10">
+            <!-- UPDATED LINK -->
+            <a href="https://installchecker.com/cl/i/1o468e" class="download-button bg-blue-600 w-full text-center text-xl font-bold py-4 px-6 rounded-xl block text-white">
+                Download Now
+            </a>
+            <div class="flex justify-between items-center mt-4 px-2 text-gray-400">
+                <div class="flex items-center space-x-2">
+                    <!-- Android Icon & Apple Icon -->
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.57,14.86L19.43,13.72A1,1,0,0,0,18,13.72h0a1,1,0,0,0-.71.29L15.43,15.9a1,1,0,0,1-1.42,0,1,1,0,0,1,0-1.42l1.91-1.91a1,1,0,0,0,.29-.71h0a1,1,0,0,0-.29-.71L14.29,10.29a1,1,0,0,1,0-1.42,1,1,0,0,1,1.42,0l1.86,1.86a1,1,0,0,0,.71.29h0a1,1,0,0,0,.71-.29l1.14-1.14a1,1,0,0,0,0-1.42,1,1,0,0,0-1.42,0L17,9.29a1,1,0,0,1-1.42,0,1,1,0,0,1,0-1.42l1.14-1.14a3,3,0,0,1,4.24,0,3,3,0,0,1,0,4.24ZM4.83,16.42A3,3,0,0,1,9.07,15l1.14-1.14a1,1,0,0,0-1.42-1.42L7.65,13.58a1,1,0,0,1-1.42,0,1,1,0,0,1,0-1.42L8.14,10.29a1,1,0,0,0,0-1.42,1,1,0,0,0-1.42,0L5.58,10a1,1,0,0,0-.71.29h0a1,1,0,0,0-.29.71L3.43,12.9a1,1,0,0,1,0,1.42,1,1,0,0,1,1.42,0l1.86-1.86a1,1,0,0,0,0-1.42,1,1,0,0,0-1.42,0L4.14,12.17a3,3,0,0,1,0-4.24,3,3,0,0,1,4.24,0l1.14,1.14a1,1,0,0,1,0,1.42,1,1,0,0,1-1.42,0L7,9.29a1,1,0,0,0-1.42,1.42L7.47,12.6a1,1,0,0,1,0,1.42,1,1,0,0,1-1.42,0L4.14,12.17a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.42l1.14,1.14a1,1,0,0,1,0,1.42,1,1,0,0,1-1.42,0l-1.14-1.14a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.42Z"/></svg>
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.39,14.63c-.03,2.44-1.55,4.11-3.33,4.14-1.1.02-2.08-.66-3.06-.66-1,0-2.18.68-3.23.68-1.78,0-3.33-1.64-3.33-4.2,0-2.79,2.23-3.83,4.35-3.83,1.08,0,2.06.5,2.94.5s2.06-.52,3.18-.52c2.2,0,4.47,1.17,4.47,3.62Zm-4.52-6.3c.79-.9,1.35-2.14,1.22-3.33a3.56,3.56,0,0,0-2.67,1.43c-.76.92-1.4,2.16-1.25,3.34.2.06,2.94-1.38,2.7-1.44Z"/></svg>
+                </div>
+                <span class="font-semibold">10,000,000+ Downloads</span>
+            </div>
+        </div>
+
+        <!-- Screenshots Scroller -->
+        <div class="w-full max-w-7xl overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_10%,_black_90%,transparent_100%)] mb-12">
+            <div class="scroller flex items-center justify-start [&_img]:max-w-none">
+                <!-- Duplicated images for a seamless loop -->
+                <img src="https://play-lh.googleusercontent.com/HEiVUv40s3lfJ513EbtBR6w5S_b1wTqae5tUZtcHKkEKPuqCyzbWe2Wg3CXCnP_nZzo=w1052-h592" alt="Gameplay Screenshot" class="h-48 md:h-64 rounded-lg shadow-lg mx-4">
+                <img src="https://play-lh.googleusercontent.com/9sEnYNzbweX1tjv5Jwv32ylkEDrBMV3-KjK9EO9U_b-gNcpAXZyr4c07Ov-0IkFZmds=w1052-h592" alt="Gameplay Screenshot" class="h-48 md:h-64 rounded-lg shadow-lg mx-4">
+                <img src="https://play-lh.googleusercontent.com/h9S2moJb1mXyJ6G052d9zuu9yGH7Lg8Y2p2bTqO0A9eL9J-8QzI1cNp-3MRsFNhUNg=w1052-h592" alt="Gameplay Screenshot" class="h-48 md:h-64 rounded-lg shadow-lg mx-4">
+                <img src="https://play-lh.googleusercontent.com/2Yl_uK2j2n2aC5O8ruqVlqVb4u_3bYyQR8tVcFy-1a-1PSV9iG2pX4s-m-4Cj-B-yQ=w1052-h592" alt="Gameplay Screenshot" class="h-48 md:h-64 rounded-lg shadow-lg mx-4">
+                <img src="https://play-lh.googleusercontent.com/HEiVUv40s3lfJ513EbtBR6w5S_b1wTqae5tUZtcHKkEKPuqCyzbWe2Wg3CXCnP_nZzo=w1052-h592" alt="Gameplay Screenshot" class="h-48 md:h-64 rounded-lg shadow-lg mx-4">
+                <img src="https://play-lh.googleusercontent.com/9sEnYNzbweX1tjv5Jwv32ylkEDrBMV3-KjK9EO9U_b-gNcpAXZyr4c07Ov-0IkFZmds=w1052-h592" alt="Gameplay Screenshot" class="h-48 md:h-64 rounded-lg shadow-lg mx-4">
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="w-full max-w-5xl px-4">
+            <h3 class="text-center text-2xl md:text-3xl font-bold mb-6 text-white">What Players Are Saying</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="text-gray-300 mb-4">"Absolutely incredible. Having unlimited money lets me focus on the strategy and fun, not the grind. I built my dream team in one evening!"</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-white">- LegendPlayer27</span>
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="text-gray-300 mb-4">"This is how the game should be played. No more waiting or paying for gems. Just pure, uninterrupted baseball action. Highly recommended!"</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-white">- Homerun_King</span>
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-6">
+        <p class="text-gray-500 text-sm">&copy; 2024 BASEBALL 9. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Theme toggle script
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        themeToggleBtn.addEventListener('click', () => {
+            // Toggle light-mode class on body
+            document.body.classList.toggle('light-mode');
+
+            // Toggle icons
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
+
